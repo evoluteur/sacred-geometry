@@ -1,4 +1,4 @@
-# Sacred Geometry Generator
+# Sacred-Geometry
 
 Draw, tune, and export the classic figures of sacred geometry: Vesica Piscis, Seed of Life, Flower of Life, Metatron's Cube, and the Golden Spiral. Every figure is constructed from circles and straight lines only - no images, no libraries.
 
