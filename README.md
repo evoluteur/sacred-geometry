@@ -46,6 +46,6 @@ Sacred Geometry Generator is Open Source at [GitHub](https://github.com/evoluteu
 
 Encourage this project by [becoming a sponsor](https://github.com/sponsors/evoluteur).
 
-You may also be interested in my other projects [Healing Frequencies](https://github.com/evoluteur/healing-frequencies) and [Motivational Numerology](https://github.com/evoluteur/motivational-numerology).
+You may also be interested in my other projects [Healing Frequencies](https://github.com/evoluteur/healing-frequencies), [Binaural Beats](https://github.com/evoluteur/binaural-beats), and [Motivational Numerology](https://github.com/evoluteur/motivational-numerology).
 
 (c) 2026 [Olivier Giulieri](https://evoluteur.github.io/)
