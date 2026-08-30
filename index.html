@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-063933E3C2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-063933E3C2");
+    </script>
+    <title>Sacred Geometry Generator - Draw and export sacred geometry</title>
+    <link rel="canonical" href="https://evoluteur.github.io/sacred-geometry/" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <meta name="theme-color" content="#12122a" />
+    <link href="sg.css" rel="stylesheet" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        addEventListener("load", () =>
+          navigator.serviceWorker.register("sw.js"),
+        );
+      }
+    </script>
+    <meta
+      name="keywords"
+      content="sacred geometry, flower of life, seed of life, metatron's cube, vesica piscis, fruit of life, golden spiral, fibonacci, golden ratio, phi, mandala, svg, generator, pattern, meditation"
+    />
+    <meta
+      name="description"
+      content="Draw, tune, and export sacred geometry patterns as SVG or PNG: Vesica Piscis, Seed of Life, Flower of Life, Metatron's Cube, and the Golden Spiral."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://evoluteur.github.io/sacred-geometry/"
+    />
+    <meta property="og:title" content="Sacred Geometry Generator" />
+    <meta
+      property="og:description"
+      content="Draw, tune, and export sacred geometry patterns as SVG or PNG: Vesica Piscis, Seed of Life, Flower of Life, Metatron's Cube, and the Golden Spiral."
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/evoluteur/sacred-geometry/main/sg-app.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sacred Geometry Generator" />
+    <meta
+      name="twitter:description"
+      content="Draw, tune, and export sacred geometry patterns as SVG or PNG."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/evoluteur/sacred-geometry/main/sg-app.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Marcellus"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Sacred Geometry Generator",
+        "url": "https://evoluteur.github.io/sacred-geometry/",
+        "description": "Draw, tune, and export sacred geometry patterns as SVG or PNG: Vesica Piscis, Seed of Life, Flower of Life, Metatron's Cube, and the Golden Spiral.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": {
+          "@type": "Person",
+          "name": "Olivier Giulieri",
+          "url": "https://evoluteur.github.io/"
+        }
+      }
+    </script>
+  </head>
+
+  <body onload="init()">
+    <header id="header">
+      <div class="links">
+        <a href="gallery.html">Gallery</a>
+        <a
+          href="https://github.com/evoluteur/sacred-geometry"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </div>
+      <h1>Sacred <span>Geometry</span></h1>
+      <nav class="nav"></nav>
+    </header>
+
+    <main>
+      <div class="stage" id="stage"></div>
+
+      <div class="panel">
+        <h2 id="pname"></h2>
+        <p class="tagline" id="tagline"></p>
+        <p class="blurb" id="blurb"></p>
+
+        <label id="stepsRow">
+          <span><b id="stepsLabel"></b> <b id="stepsVal"></b></span>
+          <input
+            type="range"
+            id="steps"
+            min="1"
+            max="6"
+            step="1"
+            oninput="onSteps(this)"
+          />
+        </label>
+
+        <label>
+          <span>Rotation <b id="rotVal">0°</b></span>
+          <input
+            type="range"
+            id="rot"
+            min="0"
+            max="360"
+            step="1"
+            value="0"
+            oninput="onRot(this)"
+          />
+        </label>
+
+        <label>
+          <span>Stroke <b id="strokeVal">0.5</b></span>
+          <input
+            type="range"
+            id="stroke"
+            min="0.1"
+            max="2"
+            step="0.1"
+            value="0.5"
+            oninput="onStroke(this)"
+          />
+        </label>
+
+        <label>
+          <span>Palette</span>
+          <select id="palette" onchange="onSelect(this, 'palette')"></select>
+        </label>
+
+        <label>
+          <span>Background</span>
+          <select id="bg" onchange="onSelect(this, 'bg')"></select>
+        </label>
+
+        <label class="check">
+          <input
+            type="checkbox"
+            id="guides"
+            onchange="onCheck(this, 'guides')"
+          />
+          Construction lines
+        </label>
+
+        <label class="check">
+          <input
+            type="checkbox"
+            id="animate"
+            checked
+            onchange="onCheck(this, 'animate')"
+          />
+          Animate the drawing
+        </label>
+
+        <div class="buttons">
+          <button onclick="replay()">Replay</button>
+          <button onclick="surprise()">Surprise me</button>
+        </div>
+        <div class="buttons">
+          <button onclick="downloadSvg()">Save SVG</button>
+          <button onclick="downloadPng()">Save PNG</button>
+          <button onclick="copySvg()">Copy SVG</button>
+        </div>
+        <div class="hint" id="hint"></div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <p>
+        Every figure is built from circles and straight lines only - no images,
+        no libraries, no tracking. Exports are true vectors, so they scale to
+        any size for print, laser cutting, or embroidery.
+      </p>
+      <p>
+        Sacred Geometry Generator is open source on
+        <a
+          href="https://github.com/evoluteur/sacred-geometry"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+        with an MIT license. Encourage this project by
+        <a
+          href="https://github.com/sponsors/evoluteur"
+          target="_blank"
+          rel="noopener"
+          >becoming a sponsor</a
+        >.
+      </p>
+      <p>
+        You may also like
+        <a
+          href="https://evoluteur.github.io/healing-frequencies/"
+          target="_blank"
+          rel="noopener"
+          >Healing Frequencies</a
+        >
+        and
+        <a
+          href="https://evoluteur.github.io/motivational-numerology/"
+          target="_blank"
+          rel="noopener"
+          >Motivational Numerology</a
+        >.
+      </p>
+      <p>
+        (c) 2026
+        <a href="https://evoluteur.github.io/" target="_blank" rel="noopener"
+          >Olivier Giulieri</a
+        >
+      </p>
+    </div>
+
+    <script src="patterns.js"></script>
+    <script src="js/sg.js"></script>
+  </body>
+</html>

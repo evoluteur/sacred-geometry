@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-063933E3C2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-063933E3C2");
+    </script>
+    <title>Gallery - Sacred Geometry Generator</title>
+    <link
+      rel="canonical"
+      href="https://evoluteur.github.io/sacred-geometry/gallery.html"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <meta name="theme-color" content="#12122a" />
+    <link href="sg.css" rel="stylesheet" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        addEventListener("load", () =>
+          navigator.serviceWorker.register("sw.js"),
+        );
+      }
+    </script>
+    <meta
+      name="description"
+      content="All the patterns of the Sacred Geometry Generator side by side: Vesica Piscis, Seed of Life, Flower of Life, Metatron's Cube, and the Golden Spiral."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Marcellus"
+    />
+  </head>
+
+  <body onload="initGallery()">
+    <header id="header">
+      <div class="links">
+        <a href="index.html">Generator</a>
+        <a
+          href="https://github.com/evoluteur/sacred-geometry"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </div>
+      <h1>Sacred <span>Geometry</span></h1>
+    </header>
+
+    <p class="intro">
+      Five figures, each one built out of the one before it. Pick any of them to
+      open it in the generator, where you can change its depth, rotation,
+      palette, and stroke, then export it as SVG or PNG.
+    </p>
+
+    <div class="cards"></div>
+
+    <div class="footer">
+      <p>
+        Sacred Geometry Generator is open source on
+        <a
+          href="https://github.com/evoluteur/sacred-geometry"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+        with an MIT license.
+      </p>
+      <p>
+        (c) 2026
+        <a href="https://evoluteur.github.io/" target="_blank" rel="noopener"
+          >Olivier Giulieri</a
+        >
+      </p>
+    </div>
+
+    <script src="patterns.js"></script>
+    <script src="js/sg.js"></script>
+  </body>
+</html>
