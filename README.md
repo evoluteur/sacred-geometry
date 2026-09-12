@@ -36,7 +36,7 @@ Draw, tune, and export the classic figures of sacred geometry: Vesica Piscis, Se
 
 ## Under the hood
 
-Plain HTML, CSS, and JavaScript building SVG through the DOM - no dependencies, no build step, no tracking. Each pattern is defined in [`patterns.js`](patterns.js) as a function returning shape descriptors in unit space, so adding a new figure means adding one entry to that array.
+Plain HTML, CSS, and JavaScript building SVG through the DOM - no dependencies, no build step, no tracking. No WebGL, no `<canvas>` - it runs in any browser that can draw SVG. Each pattern is defined in [`patterns.js`](patterns.js) as a function returning shape descriptors in unit space, so adding a new figure means adding one entry to that array.
 
 Sacred Geometry Generator is a Progressive Web App (PWA): you can install it on your phone or computer from the browser, and it works offline.
 
@@ -46,6 +46,6 @@ Sacred Geometry Generator is Open Source at [GitHub](https://github.com/evoluteu
 
 Encourage this project by [becoming a sponsor](https://github.com/sponsors/evoluteur).
 
-You may also be interested in my other projects [Healing Frequencies](https://github.com/evoluteur/healing-frequencies), [Binaural Beats](https://github.com/evoluteur/binaural-beats), [Platonic Solids](https://github.com/evoluteur/platonic-solids), and [Motivational Numerology](https://github.com/evoluteur/motivational-numerology).
+You may also be interested in my other projects [Healing Frequencies](https://github.com/evoluteur/healing-frequencies), [Binaural Beats](https://github.com/evoluteur/binaural-beats), [Cymatics](https://github.com/evoluteur/cymatics), [Platonic Solids](https://github.com/evoluteur/platonic-solids), and [Motivational Numerology](https://github.com/evoluteur/motivational-numerology).
 
 (c) 2026 [Olivier Giulieri](https://evoluteur.github.io/)
